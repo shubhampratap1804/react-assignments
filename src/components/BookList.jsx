@@ -13,11 +13,16 @@ function BookList() {
   return (
     <div>
       <BookForm addBook={addBook} />
-      <ul>
-        {books.map((book, index) => (
-            <li key={index}>{`Title- ${book.title}. Author- ${book.author}. Year- ${book.year}`}</li>
-        ))}
-      </ul>
+        {books.length === 0 ? (
+            <p>The book list is empty!</p>
+        ) : (
+            <ul>
+            {books.map((book, index) => (
+                <li key={index}> Title- {book.title}. Author- {book.author}. Year- {book.year}</li>
+            ))}
+            </ul>
+        )
+    }
     </div>
   )
 }
