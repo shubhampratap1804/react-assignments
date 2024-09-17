@@ -19,7 +19,7 @@ const handleSubmit = (e) => {
 
   return (
     <div>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="mb-4">
             <h2>Add Your Books Here!</h2>
   <div className="form-group">
     <label htmlFor='title'>Title - </label>

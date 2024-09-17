@@ -1,7 +1,7 @@
 import React from 'react'
 import BookForm from './BookForm'
 import { useState } from 'react'
-
+import './BookList.css';
 function BookList() {
 
     const [books, setBooks] = useState([]);
@@ -22,22 +22,25 @@ function BookList() {
     }
 
   return (
-    <div>
+    <div className="container mt-5">
       <BookForm addBook={addBook} />
+
         {books.length === 0 ? (
-            <p>The book list is empty!</p>
+            <p className="text-muted">The book list is empty!</p>
         ) : (
-            <ul>
+            <ul className="list-group mb-3">
             {books.map((book, index) => (
-                <li key={index}> Title- {book.title}. Author- {book.author}. Year- {book.year}. <button onClick={handleToggle}>{toggle ? 'Hide Details' : 'Show Details'}</button></li>
+                <li className="list-group-item" key={index}> Title- {book.title}. Author- {book.author}. 
+                Year- {book.year}. <button className="btn btn-link" 
+                onClick={handleToggle}>{toggle ? 'Hide Details' : 'Show Details'}</button></li>
             ))}
             </ul>
         )
     }
- <button className='btn btn-primary' onClick={handleDelete}>Delete</button>
+ <button className='btn btn-danger' onClick={handleDelete}>Delete</button>
     
     {toggle && (
-        <div>
+        <div className="mt-2">
             <p><strong>Description:</strong> 'No description available.'</p>
             <p><strong>Genre:</strong>'Unknown genre'</p>
         </div>
