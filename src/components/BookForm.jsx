@@ -1,5 +1,5 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import { TextField, Button } from '@mui/material';
 
 function BookForm({ addBook }) {
 
@@ -23,20 +23,41 @@ const handleSubmit = (e) => {
             <h2>Add Your Books Here!</h2>
   <div className="form-group">
     <label htmlFor='title'>Title - </label>
-    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} className="form-control" id="title" placeholder="Enter title"/>
+    <TextField
+        label="Title"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        fullWidth
+        margin="normal"
+      />
   </div>
 
-  <div className="form-group">
+<div className="form-group">
     <label htmlFor='author'>Author - </label>
-    <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} className="form-control" id="author" placeholder="Enter author"/>
-  </div>
+    <TextField
+        label="Author"
+        value={author}
+        onChange={(e) => setAuthor(e.target.value)}
+        fullWidth
+        margin="normal"
+    />
+</div>
 
-  <div className="form-group">
+<div className="form-group">
     <label htmlFor='year'>Year - </label>
-    <input type="number" value={year} onChange={(e) => setYear(e.target.value)} className="form-control" id="year" placeholder="Enter year"/>
-  </div>
+    <TextField
+        label="Year"
+        type="number"
+        value={year}
+        onChange={(e) => setYear(e.target.value)}
+        fullWidth
+        margin="normal"
+    />
+</div>
 
-  <button type="submit" className="btn btn-primary">Submit</button>
+    <Button type="submit" variant="contained" color="primary">
+        Add Book
+    </Button>
 </form>
     </div>
   )
