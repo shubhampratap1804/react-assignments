@@ -13,7 +13,7 @@ const handleSubmit = (e) => {
         addBook({title, author, year});
         setTitle('');
         setAuthor('');
-        setYear('');
+        setYear(1900);
     }
 }
 

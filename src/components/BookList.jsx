@@ -10,6 +10,12 @@ function BookList() {
         setBooks([...books, book]);
     }
 
+    const handleDelete = () => {
+        setBooks((prevBooks) =>{
+            return prevBooks.slice(0,-1);
+        })
+    }
+
   return (
     <div>
       <BookForm addBook={addBook} />
@@ -18,11 +24,12 @@ function BookList() {
         ) : (
             <ul>
             {books.map((book, index) => (
-                <li key={index}> Title- {book.title}. Author- {book.author}. Year- {book.year}</li>
+                <li key={index}> Title- {book.title}. Author- {book.author}. Year- {book.year}.</li>
             ))}
             </ul>
         )
     }
+ <button className='btn btn-primary' onClick={handleDelete}>Delete</button>
     </div>
   )
 }
