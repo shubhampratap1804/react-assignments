@@ -1,11 +1,12 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import BookList from './components/BookList';
+import { AxiosDemo } from './components/AxiosDemo';
 
 function App() {
   return (
     <div>
-      <BookList />
+      {/* <BookList /> */}
+      <AxiosDemo />
     </div>
   );
 }
