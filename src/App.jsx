@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className={themeColor}>
-    <BookList toggleTheme = {toggleTheme} theme={theme}/>
+    <BookList toggleTheme = {toggleTheme}/>
     {/* <AxiosDemo /> */}
     {/* <BookForm/> */}
     {/* <BooKDataLoader/> */}
