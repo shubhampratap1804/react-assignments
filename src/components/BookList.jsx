@@ -3,16 +3,17 @@ import React, { useEffect, useState } from 'react'
 import BookForm from './BookForm';
 import BooKDataLoader from './BooKDataLoader'
 
-function BookList() {
+function BookList({ toggleTheme, theme }) {
 
+    //books
+    const [books, setBooks] = useState([]);
+    //button counter
     const [counter, setCounter] = useState(0);
-
     const handleCounter = () => {
         setCounter((counter) => counter + 1);
     }
 
-    const [books, setBooks] = useState([]);
-
+    //using effect to render only when counter changes
     useEffect(() => {
         const fetchBooks = async () => {
             try{
@@ -28,14 +29,22 @@ function BookList() {
         }
     }, [counter]);
 
+    //adding books using setBooks
     const addBooks = (book) => {
         setBooks([...books, book]);
     }
+
+    /*implementing useContext for switching to 'dark/light' theme.
+        
+    */
+
+
 
   return (
     <div>
       <BookForm addBooks={addBooks}/>
         <button className='btn btn-danger' onClick={handleCounter}>Increment Counter</button>
+        <button onClick={toggleTheme}>Change theme</button>
         <BooKDataLoader bookList={books}/>
     </div>
   )

@@ -12,7 +12,7 @@ function BooKDataLoader({ bookList }) {
     <div className="container">
         <h2>Book Details :</h2>
         <input
-        type="text"
+        type="text" className="form-control"
         placeholder="Search books by title or author"
         value={searchItem}
         onChange={(e) => setSearchItem(e.target.value)}
